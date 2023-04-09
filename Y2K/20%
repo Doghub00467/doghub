@@ -1,0 +1,109 @@
+if _G.Key == "distinction"  then
+
+  print("Script")
+
+else
+
+ print("Key Pid EiEi")
+
+end
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+OrionLib:MakeNotification({
+
+	Name = "Dog hub",	Content = "เพิ่งทำค่ายครับ",
+
+	Image = "rbxassetid://4483345998",
+
+	Time = 5
+
+})
+
+local Window = OrionLib:MakeWindow({Name = "Dog hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+
+--Player Tab--
+
+local PlayerTab = Window:MakeTab({
+
+	Name = "Main",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local PlayerSection = PlayerTab:AddSection({
+
+	Name = "รวมสคริป"
+
+})
+
+PlayerSection:AddButton({
+
+	Name = "VapeV4",
+
+	Default = false,
+
+	Callback = function(Value)
+
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+
+	end    
+
+})
+
+PlayerSection:AddButton({
+
+	Name = "InfiniteJump",
+
+	Default = false,
+
+	Callback = function()
+
+    local InfiniteJumpEnabled = true
+
+game:GetService("UserInputService").JumpRequest:connect(function()
+
+    if InfiniteJumpEnabled then
+
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+
+    end
+
+end)
+
+       end    
+
+})
+
+DUNLIST = { 
+
+    "Flame", "ไก่", "", "", "", "", "", "", "", ""
+
+    }
+
+PlayerSection:AddDropdown({
+
+	Name = "Select Raids",
+
+    Options  = DUNLIST,
+
+    Default = "",
+
+    Callback = function(value)
+
+        SelectDun = value
+
+    end
+
+})
+
+--Player Tab End--
+
+--Settings Tab--
+
+--Settings End--
+
+OrionLib:Init() --UI Lib End 
